@@ -5,7 +5,7 @@ MongoDB is a NoSQL "document orineted" "schema less" database that is aimed to a
 ###Collection###
 It is a set of documents and do not enforce schema. Documents in collection can have different fields unlike RDBMS table which enforces a schema.
 
-###Document### 
+###Document###
 It is a set of key value pairs where in the data is kept in json format.
 
 ###How to install###
