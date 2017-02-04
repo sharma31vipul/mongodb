@@ -22,6 +22,7 @@ It is a set of key value pairs where in the data is kept in json format.
     
 ###How to connect to MongoDB###
 MongoDB binary also contains a command line tool - that is a client which can be used to connect to MongoDB server.
+    
     Navigate to Mongo_Home/bin directory
     Run mongo.exe
 
