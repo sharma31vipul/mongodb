@@ -58,7 +58,8 @@ Run MongoDB client (shell)
 ### MongoDB and Java###
 
 ###MongoDB Document Java Pojo Mapping###
-    
+
+###Use case###
 
 
 
