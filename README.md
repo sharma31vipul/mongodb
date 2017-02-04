@@ -11,9 +11,17 @@ It is a set of key value pairs where in the data is kept in json format.
 ###How to install###
     Download binary from https://www.mongodb.com/download-center
     Install it
+    As a result of install, In windows 64- you will see Mongo home directory C:\Program Files\MongoDB\Server\3.4
+    Let's call Mongo_Home for easy recall.
 
 ###How to start###
-
+    Navigate to Mongo_Home/bin directory
+    Run mongod.exe without argument. This method expects the directory "C:\data\db" to be created else the MongoDB server will not start. The default port of MongoDB is 27017.
+    Or
+    Run mongod.exe --dbpath <file system path> --port <port number> for example mongod.exe --dbpath C:\data\mongo\master --port 27017
+    
+Thanks
+    
 
 
 
