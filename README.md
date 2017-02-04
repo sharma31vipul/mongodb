@@ -9,8 +9,8 @@ It is a set of documents and do not enforce schema. Documents in collection can 
 It is a set of key value pairs where in the data is kept in json format.
 
 ###How to install###
-  Download binary from https://www.mongodb.com/download-center
-  Install it
+    Download binary from https://www.mongodb.com/download-center
+    Install it
 
 ###How to start###
 
