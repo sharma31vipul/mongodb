@@ -30,6 +30,26 @@ MongoDB binary also contains a command line tool - that is a client which can be
 Run MongoDB client (shell)
     
     db.help()   to see list of commands
+    db.stats()  MongoDB server stats
+    use <db_name>   To create or switch database
+    db  to check current database
+    show dbs    list databases
+    db.dropDatabase()   To drop database
+    db.createCollection(name, options)  to create collection
+    db.<collection_name>.insert(json)   also creates a collection and put document in it
+    show collections    shows collections present
+    db.<collection_name>.drop()    drop collection
+    db.COLLECTION_NAME.insert(document) To insert a document
+    db.COLLECTION_NAME.find()   To query data from MongoDB collection
+    db.COLLECTION_NAME.find().pretty()  results in a formatted way
+    db.COLLECTION_NAME.findOne()    returns only one document
+    db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA)     To update
+    db.COLLECTION_NAME.save(document)   To save
+    db.COLLECTION_NAME.remove(DELLETION_CRITTERIA)  To remove
+    db.COLLECTION_NAME.ensureIndex({KEY:1})     To create an index
+    db.COLLECTION_NAME.aggregate(AGGREGATE_OPERATION)   
+    
+    
     
     
 
