@@ -49,8 +49,9 @@ Run MongoDB client (shell)
     db.COLLECTION_NAME.ensureIndex({KEY:1})     To create an index
     db.COLLECTION_NAME.aggregate(AGGREGATE_OPERATION)   
     
-    
-    
+###MongoDB Replication###
+
+###MongoDB Sharding###
     
 
 
