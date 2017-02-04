@@ -25,6 +25,8 @@ MongoDB binary also contains a command line tool - that is a client which can be
     Navigate to Mongo_Home/bin directory
     Run mongo.exe
 
+Thanks
+
 
     
 
