@@ -85,7 +85,7 @@ A MongoDB sharded cluster consists of the following components:
 MongoDB shards data at the collection level, distributing the collection data across the shards in the cluster. 
 
 Shard Key
-To distribute the documents in a collection, MongoDB partitions the collection using the shard key. The shard key consists of an immutable field or fields that exist in every document in the target collection.
+To distribute the documents in a collection, MongoDB partitions the collection using the shard key. The shard key consists of an immutable field or fields that exist in every document in the target collection. A sharded collection can have only one shard key.
 
 Chunks
 MongoDB partitions sharded data into chunks. Each chunk has an inclusive lower and exclusive upper range based on the shard key.
