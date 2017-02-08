@@ -70,6 +70,25 @@ Multiple mongodb instances can be run on the same host but on different port and
         
         
 ###MongoDB Sharding###
+Sharding is the process of distributing data across multiple servers.
+
+Why Sharding
+Vertical scaling requires increase in the capacity of the server in terms of CPU RAM etc which is quite expensive where as Horizontal Scaling involves dividing the dataset and load over multiple servers, adding additional servers to increase capacity as required.
+
+MongoDB supports horizontal scaling through sharding.
+A MongoDB sharded cluster consists of the following components:
+
+        shard: Each shard contains a subset of the sharded data. Each shard can be deployed as a replica set.
+        mongos: The mongos acts as a query router, providing an interface between client applications and the sharded cluster.
+        config servers: Config servers store metadata and configuration settings for the cluster. As of MongoDB 3.4, config servers must be deployed as a replica set (CSRS).
+
+MongoDB shards data at the collection level, distributing the collection data across the shards in the cluster. 
+
+Shard Key
+To distribute the documents in a collection, MongoDB partitions the collection using the shard key. The shard key consists of an immutable field or fields that exist in every document in the target collection.
+
+Chunks
+MongoDB partitions sharded data into chunks. Each chunk has an inclusive lower and exclusive upper range based on the shard key.
 
 ###MongoDB Security###
     
