@@ -66,6 +66,7 @@ Multiple mongodb instances can be run on the same host but on different port and
         Add nodes in replica set
         rs.add("hostname:54322")
         rs.add("hostname:54323")
+        rs.conf() and rs.status() for metadata
         
         
 ###MongoDB Sharding###
