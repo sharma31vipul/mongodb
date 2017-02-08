@@ -50,6 +50,23 @@ Run MongoDB client (shell)
     db.COLLECTION_NAME.aggregate(AGGREGATE_OPERATION)   
     
 ###MongoDB Replication###
+Replication is the process of synchronizing data across multiple servers. This helps achieve high availability and recover data from single point of failure.
+
+MongoDB uses replica set to achieve replication across multiple servers. A replica set is a group of mongodb instances forming cluster of nodes. one of the nodes in replica set beocmes primary where all write operation goes to where as the remaining nodes become secondry and handle read operations.
+
+How to setup replica set
+Multiple mongodb instances can be run on the same host but on different port and data directory.
+        Navigate to MongoDB_Home
+        mongod.exe --dbpath C:\data\mongo\replicaset\m0 --port 54321 --replSet rs0
+        mongod.exe --dbpath C:\data\mongo\replicaset\s1 --port 54322 --replSet rs0
+        mongod.exe --dbpath C:\data\mongo\replicaset\s2 --port 54323 --replSet rs0
+        Connect to master node from mongo client mongo --port 54321
+        run it from master node rs.initiate()
+        Add nodes in replica set
+        rs.add("hostname:54322")
+        rs.add("hostname:54323")
+        
+
 
 ###MongoDB Sharding###
 
