@@ -56,6 +56,7 @@ MongoDB uses replica set to achieve replication across multiple servers. A repli
 
 How to setup replica set
 Multiple mongodb instances can be run on the same host but on different port and data directory.
+
         Navigate to MongoDB_Home
         mongod.exe --dbpath C:\data\mongo\replicaset\m0 --port 54321 --replSet rs0
         mongod.exe --dbpath C:\data\mongo\replicaset\s1 --port 54322 --replSet rs0
@@ -66,8 +67,7 @@ Multiple mongodb instances can be run on the same host but on different port and
         rs.add("hostname:54322")
         rs.add("hostname:54323")
         
-
-
+        
 ###MongoDB Sharding###
 
 ###MongoDB Security###
