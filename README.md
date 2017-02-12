@@ -228,10 +228,7 @@ Morphia morphia = new Morphia();
 morphia.map(Sample.class);
 Datastore ds = morphia.createDatastore(mongo, DBNAME);
 ds.save(sampleObject);
-java
-
-
-
+```
 
 ###Use case###
 
