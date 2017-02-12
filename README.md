@@ -98,7 +98,7 @@ With access control enabled, ensure you have a user with userAdmin or userAdminA
         Run mongoDB instance without access control
         Connect to DB (mongo shell)
         Create User
-        ```xml
+      
         use admin
         db.createUser(
             {
@@ -107,13 +107,12 @@ With access control enabled, ensure you have a user with userAdmin or userAdminA
                 roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
             }
         )
-        ```
+       
         Restart mongod with access control
         mongod --auth --port 27017 --dbpath /data/db1
         Connect and authenticate as the user administrator from mongo shell
-        db.auth()
-        or
         mongo --port 27017 -u "dbadmin" -p "admin123" --authenticationDatabase "admin"
+        or
         use admin
         db.auth("dbadmin", "admin123" )
         
