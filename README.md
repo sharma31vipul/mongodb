@@ -91,6 +91,36 @@ Chunks
 MongoDB partitions sharded data into chunks. Each chunk has an inclusive lower and exclusive upper range based on the shard key.
 
 ###MongoDB Security###
+
+Enabling Authentication
+With access control enabled, ensure you have a user with userAdmin or userAdminAnyDatabase role in the admin database. This user can administrate user and roles such as: create users, grant or revoke roles from users, and create or modify customs roles.
+
+        Run mongoDB instance without access control
+        Connect to DB (mongo shell)
+        Create User
+        ```xml
+        use admin
+        db.createUser(
+            {
+                user: "dbadmin",
+                pwd: "admin123",
+                roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+            }
+        )
+        ```
+        Restart mongod with access control
+        mongod --auth --port 27017 --dbpath /data/db1
+        Connect and authenticate as the user administrator from mongo shell
+        db.auth()
+        or
+        mongo --port 27017 -u "dbadmin" -p "admin123" --authenticationDatabase "admin"
+        use admin
+        db.auth("dbadmin", "admin123" )
+        
+        For built-in roles https://docs.mongodb.com/manual/core/security-built-in-roles/
+        For user defined roles https://docs.mongodb.com/manual/core/security-user-defined-roles/
+        
+        
     
 ### MongoDB and Java###
 
