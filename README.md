@@ -177,7 +177,61 @@ Refer MongoDB Java doc for all APIs
 http://api.mongodb.com/java/current/
 
 
-###MongoDB Document Java Pojo Mapping ODM###
+###MongoDB Document Java Pojo Mapping ODM Object Document Mapper###
+Just like Hibernate (ORM) that does object to relational mapping, In mongoDB there are various tools that provide 'ODM' power and 'Morphia' is one of the tools.
+
+For using Morphia, the class which has to be persisted to the MongoDB has to be annotated with @Entity and if you have an “id” attribute in the class, then it has to be annotated by @Id.
+
+Add morphia dependency into the application.
+```java
+import java.util.Date;
+import org.bson.types.ObjectId;
+import com.google.code.morphia.annotations.Entity;
+import com.google.code.morphia.annotations.Id;
+
+@Entity
+public class Sample {
+
+  private String task;
+ 
+  @Id private ObjectId id;
+
+  public Sample(String task,
+              ObjectId id){
+    this.task = task;
+    this.setId(id);
+  }
+
+  public Todo(String task){
+    this.task = task;
+  }
+
+  public String getTask() {
+    return task;
+  }
+  public void setTask(String task) {
+    this.task = task;
+  }
+
+  public ObjectId getId() {
+    return id;
+  }
+
+  public void setId(ObjectId id) {
+    this.id = id;
+  }
+}
+
+//Using Morphia
+Mongo mongo = new Mongo();
+Morphia morphia = new Morphia();
+morphia.map(Sample.class);
+Datastore ds = morphia.createDatastore(mongo, DBNAME);
+ds.save(sampleObject);
+java
+
+
+
 
 ###Use case###
 
