@@ -122,6 +122,15 @@ With access control enabled, ensure you have a user with userAdmin or userAdminA
         
     
 ### MongoDB and Java###
+MongoDB JDBC driver is needed for any java application to connect to MongoDB.
+Maven based projects need to include the below dependency in pom.xml
+```xml
+<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+```
 
 ###MongoDB Document Java Pojo Mapping ODM###
 
