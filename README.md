@@ -231,6 +231,57 @@ ds.save(sampleObject);
 ```
 
 ###Use case###
+Since MongoDB schemas are flexible that do not need to have the same set of fields or structure. Common fields in a collection’s documents may hold different types of data.
+Designing schema in MongoDB very much depends on 
+	
+	requirements, 
+	what all objects with their respective roles, 
+	their connectivity with each other and 
+	how objects will collaborate with each other.
 
+Suppose a client needs a database design for his blog/website and see the differences between RDBMS and MongoDB schema design. Website has the following requirements.
+
+	Every post has the unique title, description and url.
+	Every post can have one or more tags.
+	Every post has the name of its publisher and total number of likes.
+	Every post has comments given by users along with their name, message, data-time and likes.
+	On each post, there can be zero or more comments.
+
+RDBMS Schema
+Classes and their relation 
+	
+	Post [id, title, desc, url, likes, post_by]
+	Comment [comment_id, post_id, by_user, message, data_time, likes]
+	TagList [id, post_id, tag]
+
+
+MongoDB Schema
+
+```json
+{
+   _id: POST_ID
+   title: TITLE_OF_POST, 
+   description: POST_DESCRIPTION,
+   by: POST_BY,
+   url: URL_OF_POST,
+   tags: [TAG1, TAG2, TAG3],
+   likes: TOTAL_LIKES, 
+   comments: [	
+      {
+         user:'COMMENT_BY',
+         message: TEXT,
+         dateCreated: DATE_TIME,
+         like: LIKES 
+      },
+      {
+         user:'COMMENT_BY',
+         message: TEXT,
+         dateCreated: DATE_TIME,
+         like: LIKES
+      }
+   ]
+}
+```
+So while showing the data, in RDBMS you need to join three tables and in MongoDB, data will be shown from one collection only.
 
 
