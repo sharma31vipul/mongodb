@@ -132,6 +132,31 @@ Maven based projects need to include the below dependency in pom.xml
 		</dependency>
 ```
 
+A few APIs
+To connect to MongoDB
+```java
+public void connect() {
+ String mongoHost = "mongodb://localhost:27017";
+ MongoClient mclient = new MongoClient(mongoHost);
+}
+```
+To connect database
+```java
+public void connectDB(String dbName) {
+ DB database = mclient.getDB(dbName);
+}
+```
+To Authenticate
+```java
+public void authenticate(DB database) {
+ database.authenticate("userName", "password");
+}
+```
+
+Refer MongoDB Java doc for all APIs
+http://api.mongodb.com/java/current/
+
+
 ###MongoDB Document Java Pojo Mapping ODM###
 
 ###Use case###
