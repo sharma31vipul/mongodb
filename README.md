@@ -152,7 +152,27 @@ public void authenticate(DB database) {
  database.authenticate("userName", "password");
 }
 ```
+A few operations
 
+	DBCollection collection = db.getCollection("collection_name")	// collection instance
+	DBObject document = new BasicDBObject(); 	// basic document
+	document.put("key1", "value1");		// record in document
+	document.put("key2", "value2");		// record in document
+	collection.insert(document);		// To insert document into collection
+	
+	DBObject doc = collection.findOne();	// To read
+	DBCursor cursor = collection.find();
+	for(DBObject doc: cursor) { }
+	DBObject criteria = new BasicDBObject("age", age);
+	// matching operator {"age": age}
+	DBCursor cursor = collection.find(criteria);
+	
+	//Read and Filter
+	DBObject criteria = new BasicDBObject("name", name);
+	DBObject fields = new DBObject("address", 1);		// 1 for ON include
+	fields.put("_id", 0);		// exclude _id	0 for OFF
+	DBObject document = collection.findOne(criteria, fields);
+	
 Refer MongoDB Java doc for all APIs
 http://api.mongodb.com/java/current/
 
