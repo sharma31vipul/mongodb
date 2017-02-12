@@ -281,6 +281,7 @@ MongoDB Schema
       }
    ]
 }
+
 ```
 So while showing the data, in RDBMS you need to join three tables and in MongoDB, data will be shown from one collection only.
 
